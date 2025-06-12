@@ -6,6 +6,8 @@ Ce projet à pour but de simuler la propagation d'une onde selon d'Alembert.
 Il utilise la méthode des éléments finis, à l'aide d'une matrice, pour simuler en temps réel la propagation d'une onde.
 Les conditions initiales sont fixées de la manière suivante : une valeur de la matrice est fixée à une certaines valeur initiale.
 
+Dépendance : SFML
+
 # Principals fonctionnalités
 
 Rapidité : le programme écrit en C++ et SFML permet d'être assez rapide, d'autant que l'optimisation temporelle à été prise en compte dans la manière de coder.
