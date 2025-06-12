@@ -6,16 +6,16 @@ using namespace std;
 
 Phy_Principale::Phy_Principale(int Xmatrice, int Ymatrice, double dt, double dist_case, double celerite)
 {
-
+    //Constructeur
     this->dt = dt;
     this->c = celerite;
     this->dist = dist_case;
     this->f = 0.5d;
-    this->matrice = vector<vector<double>>(Xmatrice, vector<double>(Ymatrice, 0.d));
+    this->matrice = vector<vector<double>>(Xmatrice, vector<double>(Ymatrice, 0.d)); //On remarquerat que les matrices sont stockes jusqu'a 2 actualisations précédentes
     this->matricePREC = vector<vector<double>>(Xmatrice, vector<double>(Ymatrice, 0.d));
     this->matricePREC2 = vector<vector<double>>(Xmatrice, vector<double>(Ymatrice, 0.d));
 
-    this->matrice[300][150] = 1.d;
+    this->matrice[300][150] = 1.d; //On place les conditions initials
     this->matricePREC[300][150] = 1.d;
 
 }
@@ -31,7 +31,7 @@ void Phy_Principale::UDP_PROPDONDE(bool anti_derive){
     int X_matrice = matrice.size();
     int Y_matrice = matrice[0].size();
 
-    //MILIEU
+    //Actualisation du MILIEU
 
     double Sprec = 0;
     double S = 0;
@@ -53,7 +53,7 @@ void Phy_Principale::UDP_PROPDONDE(bool anti_derive){
         }
     }
 
-    //BORD
+    //Actualisation du BORD
 
     for(int i = 0; i < X_matrice; i++){
         this->matrice[i][0] = 0;
