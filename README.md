@@ -27,7 +27,7 @@ GTemps.cpp/.h : classe ayant la gestion temporelle des actualisations graphique 
 
 # Remarque
 
-Rq : ce projet est un vieux projet de terminale, il a été "dépoussiéré" pour l'occasion. (création d'une release pour Windows et ajout de commentaires, mais le code est resté le même)
+Rq : ce projet est un vieux projet, il a été "dépoussiéré" pour l'occasion. (création d'une release pour Windows et ajout de commentaires, mais le code est resté le même)
 Ainsi, comme il n'est pas fini, il manque des composants parmi lesquelles :
 - un moyen d'interagir avec l'utilisateur
 - un dispositif "anti-dérive ", car les calculs pour actualiser la matrice étant très précis (utilisation du type double, intervalle de temps réduits), il n'en reste néanmoins que des erreurs existent et font "dériver" le signal (sa somme, qui devrait être constante diverge vers +inf) aux bouts de quelques secondes.
