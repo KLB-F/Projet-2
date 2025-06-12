@@ -25,7 +25,7 @@ fenetre::~fenetre()
     //dtor
 }
 
-void fenetre::boucle(){
+void fenetre::boucle(){ //La fenetre veut-elle se fermé ?
 
     while(const std::optional evenement = this->Fenetre.pollEvent()){
 
@@ -37,11 +37,12 @@ void fenetre::boucle(){
 
 }
 
-void fenetre::raffraichir(vector<vector<double>> matrice){
+void fenetre::raffraichir(vector<vector<double>> matrice){ //Permet de raffraichir la fenetre graphiquement
 
     int X_matrice = matrice.size();
     int Y_matrice = matrice[0].size();
 
+    //On créer une image, que l'on va colorer selon la case correspondante à la matrice, puis on va coller cette case sur une texture
     sf::Image image({X_matrice, Y_matrice}, sf::Color::Black);
 
     this->Fenetre.clear();
