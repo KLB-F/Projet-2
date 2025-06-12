@@ -4,7 +4,7 @@
 #include <SFML/System/Time.hpp>
 
 GTemps::GTemps(int FPSviser, int UpdPSviser)
-{
+{ //Constructeur
 
     this->horloge = sf::Clock();
     this->FPSobj = FPSviser;
@@ -20,7 +20,7 @@ GTemps::~GTemps()
     //dtor
 }
 
-bool GTemps::estTempsRaffraichir(){
+bool GTemps::estTempsRaffraichir(){ //Fonction de permettant de savoir si il est temps de raffraichir la fenetre
     if(this->temps_el.asMilliseconds() >= this->compteur_FPS*1000/this->FPSobj){
         this->compteur_FPS++;
         return true;
@@ -29,7 +29,7 @@ bool GTemps::estTempsRaffraichir(){
     }
 }
 
-bool GTemps::estTempsUpdPhysique(){
+bool GTemps::estTempsUpdPhysique(){ //De même, avec la physique
 
     if(this->temps_el.asMilliseconds() >= this->compteur_UpdPh*1000/this->Phy_UdpPS_Obj){
         this->compteur_UpdPh++;
@@ -40,7 +40,7 @@ bool GTemps::estTempsUpdPhysique(){
 
 }
 
-float GTemps::auto_resetTemps(){
+float GTemps::auto_resetTemps(){ //Permet de reset le chrono
 
     if((this->compteur_FPS > this->FPSobj*3) || (this->compteur_UpdPh > this->Phy_UdpPS_Obj*3)){
 
